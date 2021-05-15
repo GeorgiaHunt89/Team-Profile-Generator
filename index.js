@@ -65,4 +65,15 @@ const addEngineer = () => {
         console.log(engineer);
         addStaff();
         });
+};
+
+//Function to record Employee answer from user
+const addEmployee = () => {
+    return inquire.prompt(employeeQuest).then((employeeAnswers) => {
+        const {name, id, email} = employeeAnswers;
+        const employee = new Employee (name, id, email);
+        staff.push(employeeAnswers);
+        console.log(employee);
+        addStaff();
+        });
 }
