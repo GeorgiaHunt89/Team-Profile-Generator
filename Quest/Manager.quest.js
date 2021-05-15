@@ -11,7 +11,7 @@ const managerQuest = [
             }
         },
         {
-        name: 'ID',
+        name: 'id',
         message: 'Please enter the managers ID:',
         type: 'input',
         validate: answer => {
@@ -22,7 +22,7 @@ const managerQuest = [
             }
         },
         {
-        name: 'Email',
+        name: 'email',
         message: 'Please enter the managers email address:',
         type: 'input',
         validate: answer => {
@@ -33,7 +33,7 @@ const managerQuest = [
             }
         },
         {
-        name: 'Office Number',
+        name: 'officeNumber',
         message: 'Please enter the managers office number:',
         type: 'input',
         validate: answer => {

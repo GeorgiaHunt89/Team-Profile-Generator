@@ -17,46 +17,52 @@ const staff = [];
 const idNumber = [];
 
 // Function to record manager answers from user
-inquire.prompt(managerQuest).then((answers) => {
-const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answer.managerOfficeNumber);
-staff.push(manager);
-idNumber.push(answers.managerId);
+inquire.prompt(managerQuest).then((managerAnswers) => {
+const {name, id, email, officeNumber} = managerAnswers;
+const manager = new Manager (name, id, email, officeNumber);
+staff.push(managerAnswers);
+console.log(manager);
 addStaff();
 });
 
-// // Function to select next staff role
-// Function addstaff(answers) {
-//     inquire.prompt([
-//     {
-//         type: 'checkbox',
-//         name: 'staffSelection',
-//         message: 'Which staff member would you like to add next?',
-//         choices: [
-//             'Employee', 'Intern', 'Engineer',
-//         ],
-//     },       
-//     ])
-//     .then(userInput => {
-//         switch(userInput.staffSelection){
-//             case 'Engineer':
-//                 addEngineer();
-//                 break;
-//                 case 'Intern':
-//                     addIntern();
-//                     break;
-//                     case 'Employee':
-//                         addEmployee();
-//                         break;
-//                         default:
-//                             generateHTML();
-//         }
-//     });
-// };
+// Function to select next staff role
+const addStaff = () => {
+    console.log('Select additional staff members');
+
+   return inquirer.prompt([
+    {
+        type: 'checkbox',
+        name: 'staffSelection',
+        message: 'Which staff member would you like to add next?',
+        choices: [
+            'Employee', 'Intern', 'Engineer',
+        ],
+    },       
+    ])
+    .then(userInput => {
+        switch(userInput.staffSelection){
+            case 'Engineer':
+                addEngineer();
+                break;
+                case 'Intern':
+                    addIntern();
+                    break;
+                    case 'Employee':
+                        addEmployee();
+                        break;
+                        default:
+                            generateHTML();
+        }
+    });
+};
 
 // Function to record Engineer answers from user
-inquire.prompt(engineerQuest).then((answers) => {
-    const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answer.engineerGitHub);
-    staff.push(engineer);
-    idNumber.push(answers.engineerId);
-    addStaff();
-    });
+const addEngineer = () => {
+    return inquire.prompt(engineerQuest).then((engineerAnswers) => {
+        const {name, id, email, gitHub} = engineerAnswers;
+        const engineer = new Engineer (name, id, email, gitHub);
+        staff.push(engineerAnswers);
+        console.log(engineer);
+        addStaff();
+        });
+}
