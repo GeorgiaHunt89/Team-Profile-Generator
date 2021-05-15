@@ -76,4 +76,15 @@ const addEmployee = () => {
         console.log(employee);
         addStaff();
         });
-}
+};
+
+//Function to record Inter answer from user
+const addIntern = () => {
+    return inquire.prompt(internQuest).then((interAnswers) => {
+        const {name, id, email, school} = internAnswers;
+        const intern = new Intern (name, id, email, school);
+        staff.push(internAnswers);
+        console.log(intern);
+        addStaff();
+        });
+};
