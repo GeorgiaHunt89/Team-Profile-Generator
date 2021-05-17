@@ -11,7 +11,7 @@ const employeeQuest = [
         }
     },
     {
-    name: 'ID',
+    name: 'id',
     message: 'Please enter the employees ID:',
     type: 'input',
     validate: answer => {
@@ -22,7 +22,7 @@ const employeeQuest = [
         }
     },
     {
-    name: 'Email',
+    name: 'email',
     message: 'Please enter the employees email address:',
     type: 'input',
     validate: answer => {

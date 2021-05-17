@@ -11,7 +11,7 @@ const engineerQuest = [
         }
     },
     {
-    name: 'ID',
+    name: 'id',
     message: 'Please enter the engineers ID:',
     type: 'input',
     validate: answer => {
@@ -22,7 +22,7 @@ const engineerQuest = [
         }
     },
     {
-    name: 'Email',
+    name: 'email',
     message: 'Please enter the engineers email address:',
     type: 'input',
     validate: answer => {
@@ -33,7 +33,7 @@ const engineerQuest = [
         }
     },
     {
-    name: 'GitHub Username',
+    name: 'gitHub',
     message: 'Please enter the GitHub username:',
     type: 'input',
     validate: answer => {

@@ -11,7 +11,7 @@ const internQuest = [
         }
     },
     {
-    name: 'ID',
+    name: 'id',
     message: 'Please enter the interns ID:',
     type: 'input',
     validate: answer => {
@@ -22,7 +22,7 @@ const internQuest = [
         }
     },
     {
-    name: 'Email',
+    name: 'email',
     message: 'Please enter the interns email address:',
     type: 'input',
     validate: answer => {
@@ -33,7 +33,7 @@ const internQuest = [
         }
     },
     {
-    name: 'School',
+    name: 'school',
     message: 'Please enter the interns school:',
     type: 'input',
     validate: answer => {
