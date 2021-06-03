@@ -57,3 +57,27 @@ const createManager = manager => {
   </div> 
   `
 }
+
+// Function to create Engineer Card
+const createEngineer = engineer => {
+  return `
+  <div class="card team-card engineer-card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+          <img src="Images/placeimg_2.png" alt="Placeholder image">
+      </div>
+      <div class="media-content">
+        <p class="title is-4 engineer-name">${engineer.name}</p>
+        <p class="subtitle is-6 engineer-title">Engineer</p>
+      </div>
+    </div>
+    <div class="content">
+      <p class='id'>ID: ${engineer.id}</p>
+      <p class='gitHub'>GitHub: ${engineer.gitHub}</p>
+      <p class='email'>Email: <a href="mailto:${engineer.email}">${manager.email}</p>
+    </div>
+  </div>
+</div> 
+`
+}
