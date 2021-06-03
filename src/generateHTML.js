@@ -82,6 +82,29 @@ const createEngineer = engineer => {
 `
 }
 
+// Function to create Employee Card
+const createEmployee = employee => {
+  return `
+  <div class="card team-card employee-card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+          <img src="Images/placeimg_4.png" alt="Placeholder image">
+      </div>
+      <div class="media-content">
+        <p class="title is-4 employee-name">${employee.name}</p>
+        <p class="subtitle is-6 employee-title">Employee</p>
+      </div>
+    </div>
+    <div class="content">
+      <p class='id'>ID: ${employee.id}</p>
+      <p class='email'>Email: <a href="mailto:${employee.email}">${manager.email}</p>
+    </div>
+  </div>
+</div> 
+`
+}
+
 // Function to create Intern Card
 const createIntern = intern => {
   return `
