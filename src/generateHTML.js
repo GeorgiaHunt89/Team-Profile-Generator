@@ -81,3 +81,27 @@ const createEngineer = engineer => {
 </div> 
 `
 }
+
+// Function to create Intern Card
+const createIntern = intern => {
+  return `
+  <div class="card team-card intern-card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+          <img src="Images/placeimg_3.png" alt="Placeholder image">
+      </div>
+      <div class="media-content">
+        <p class="title is-4 intern-name">${intern.name}</p>
+        <p class="subtitle is-6 intern-title">Intern</p>
+      </div>
+    </div>
+    <div class="content">
+      <p class='id'>ID: ${intern.id}</p>
+      <p class='school'>School: ${intern.school}</p>
+      <p class='email'>Email: <a href="mailto:${intern.email}">${manager.email}</p>
+    </div>
+  </div>
+</div> 
+`
+}
