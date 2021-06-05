@@ -128,3 +128,6 @@ const createIntern = intern => {
 </div> 
 `
 }
+
+// Exports to Index.js
+module.exports = generateHTML;

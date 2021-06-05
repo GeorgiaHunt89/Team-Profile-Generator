@@ -11,16 +11,17 @@ const Employee = require('./lib/Employee');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
+const generateHTML = require('./src/generateHTML');
 
-// Empty array to hold staff place holders
-const staff = [];
+// Empty array to hold user responses
+const userResponse = [];
 
 // Function to record manager answers from user
-async function addManager() {
+const addManager = async () => {
     const managerAnswers = await inquirer.prompt(managerQuest)
     const {name, id, email, officeNumber} = managerAnswers;
     const manager = new Manager (name, id, email, officeNumber);
-    staff.push(managerAnswers);
+    userResponse.push(managerAnswers);
     console.log(manager)
 };
 
@@ -51,43 +52,43 @@ const addStaff = async () => {
             break;
         default:
             generateHTML();
-    }
+    };
     console.log('Add:', userInput.staffSelection);
-};
-
-// Function to record Engineer answers from user
-const addEngineer = async () => {
-    const engineerAnswers = await inquirer.prompt(engineerQuest);
-    const { name, id, email, gitHub } = engineerAnswers;
-    const engineer = new Engineer(name, id, email, gitHub);
-    staff.push(engineerAnswers);
-    console.log(engineer);
-    addStaff();
 };
 
 //Function to record Employee answer from user
 const addEmployee = async () => {
     const employeeAnswers = await inquirer.prompt(employeeQuest);
-    const { name, id, email } = employeeAnswers;
+    const {name, id, email} = employeeAnswers;
     const employee = new Employee(name, id, email);
-    staff.push(employeeAnswers);
+    userResponse.push(employeeAnswers);
     console.log(employee);
+    addStaff();
+};
+
+// Function to record Engineer answers from user
+const addEngineer = async () => {
+    const engineerAnswers = await inquirer.prompt(engineerQuest);
+    const {name, id, email, gitHub} = engineerAnswers;
+    const engineer = new Engineer(name, id, email, gitHub);
+    userResponse.push(engineerAnswers);
+    console.log(engineer);
     addStaff();
 };
 
 //Function to record Intern answer from user
 const addIntern = async () => {
-    const interAnswers = await inquirer.prompt(internQuest);
-    const { name, id, email, school } = internAnswers;
+    const internAnswers = await inquirer.prompt(internQuest);
+    const {name, id, email, school} = internAnswers;
     const intern = new Intern(name, id, email, school);
-    staff.push(internAnswers);
+    userResponse.push(internAnswers);
     console.log(intern);
     addStaff();
 };
 
 // Function to create HTML page
-const writeFile = data => {
-    fs.writeFile('./dist/index.html', data, err => {
+const writePage = userResponse => {
+    fs.writeFile('./dist/index.html', userResponse, err => {
         if (err){
             console.log (err);
             return;
@@ -97,15 +98,12 @@ const writeFile = data => {
     })
 };
 
-//Function to write Manager and Staff to HTML page
+console.log(`Welcome to the Team Profile Generator, let's start adding your employees!`);
+
 addManager()
 .then(addStaff)
-.then(staff => {
-    return generateHTML(staff);
-})
-.then(HTMLFile => {
-    return writeFile(HTMLFile);
-})
+.then(userResponse => generateHTML(userResponse))
+.then(HTMLFile => writePage(HTMLFile))
 .catch(err => {
     console.log(err);
 });
