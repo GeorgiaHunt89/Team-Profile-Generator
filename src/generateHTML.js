@@ -1,101 +1,6 @@
 
-// Function to create Employee Card
-const addEmployee = employee => {
-  return `
-  <div class="card team-card employee-card">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-          <img src="Images/placeimg_4.png" alt="Placeholder image">
-      </div>
-      <div class="media-content">
-        <p class="title is-4 employee-name">${employee.name}</p>
-        <p class="subtitle is-6 employee-title">Employee</p>
-      </div>
-    </div>
-    <div class="content">
-      <p class='id'>ID: ${employee.id}</p>
-      <p class='email'>Email: <a href="mailto:${employee.email}"></p>
-    </div>
-  </div>
-</div> 
-`
-}
-
-// Function to create Manager Card
-const addManager = manager => {
-    return `
-    <div class="card team-card manager-card">
-    <div class="card-content">
-      <div class="media">
-        <div class="media-left">
-            <img src="Images/placeimg_1.png" alt="Placeholder image">
-        </div>
-        <div class="media-content">
-          <p class="title is-4 manager-name">${manager.name}</p>
-          <p class="subtitle is-6 manager-title">Manager</p>
-        </div>
-      </div>
-      <div class="content">
-        <p class='id'>ID: ${manager.id}</p>
-        <p class='officeNumber'>Office Number: ${manager.officeNumber}</p>
-        <p class='email'>Email: <a href="mailto:${manager.email}"></p>
-      </div>
-    </div>
-  </div> 
-  `
-}
-
-// Function to create Engineer Card
-const addEngineer = engineer => {
-  return `
-  <div class="card team-card engineer-card">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-          <img src="Images/placeimg_2.png" alt="Placeholder image">
-      </div>
-      <div class="media-content">
-        <p class="title is-4 engineer-name">${engineer.name}</p>
-        <p class="subtitle is-6 engineer-title">Engineer</p>
-      </div>
-    </div>
-    <div class="content">
-      <p class='id'>ID: ${engineer.id}</p>
-      <p class='gitHub'>GitHub: ${engineer.gitHub}</p>
-      <p class='email'>Email: <a href="mailto:${engineer.email}"></p>
-    </div>
-  </div>
-</div> 
-`
-}
-
-// Function to create Intern Card
-const addIntern = intern => {
-  return `
-  <div class="card team-card intern-card">
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-          <img src="Images/placeimg_3.png" alt="Placeholder image">
-      </div>
-      <div class="media-content">
-        <p class="title is-4 intern-name">${intern.name}</p>
-        <p class="subtitle is-6 intern-title">Intern</p>
-      </div>
-    </div>
-    <div class="content">
-      <p class='id'>ID: ${intern.id}</p>
-      <p class='school'>School: ${intern.school}</p>
-      <p class='email'>Email: <a href="mailto:${intern.email}"></p>
-    </div>
-  </div>
-</div> 
-`
-}
-
 // Function to Generate HTML page
-const generateHTML = (teamMemberCards) => {
+module.exports = templateData => {
   return `
   <!DOCTYPE html>
 <html lang="en">
@@ -128,11 +33,135 @@ const generateHTML = (teamMemberCards) => {
 </body>  
 </html>
   `
-}
+};
 
-// Exports to Index.js
-module.exports = generateHTML;
-module.exports = addManager;
-module.exports = addEmployee;
-module.exports = addEngineer;
-module.exports = addIntern;
+// Create Team Member cards
+const teamMemberCards = templateData => {
+
+  // Function to create Employee Card
+  const addEmployee = employee => {
+    return `
+    <div class="card team-card employee-card">
+      <div class="card-content" style="
+      border-radius: .25rem;
+      margin: 0.5em;
+      box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+      max-width: auto;
+      /* display: flex; */
+      background-color: lightblue;">
+      <div class="media">
+        <div class="media-left">
+            <img src="Images/placeimg_4.png" alt="Placeholder image">
+        </div>
+        <div class="media-content">
+          <p class="title is-4 employee-name" style="margin-left:15px">${employee.name}</p>
+          <p class="subtitle is-6 employee-title">${employee.role}</p>
+        </div>
+      </div>
+      <div class="content">
+        <p class='id'>ID: ${employee.id}</p>
+        <p class='email'>Email: <a href="mailto:${employee.email}">${employee.email}</p>
+      </div>
+    </div>
+  </div> 
+  `
+  
+  };
+  
+  // Function to create Manager Card
+  const addManager = manager => {
+     return `
+      <div class="card team-card manager-card">
+      <div class="card-content" style="
+        border-radius: .25rem;
+        margin: 0.5em;
+        box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+        max-width: auto;
+        /* display: flex; */
+        background-color: lightblue;">
+    <div class="media">
+      <div class="media-left">
+          <img src="Images/placeimg_1.png" alt="Placeholder image">
+      </div>
+      <div class="media-content">
+        <p class="title is-4 manager-name" style="margin-left:15px">${manager.name}</p>
+        <p class="subtitle is-6 manager-title">${manager.role}</p>
+      </div>
+    </div>
+    <div class="content">
+      <p class='id'>ID: ${manager.id}</p>
+      <p class='officeNumber'>Office Number: ${manager.officeNumber}</p>
+      <p class='email'>Email: <a href="mailto:${manager.email}">${manager.email}</p>
+    </div>
+    </div>
+    </div> 
+    `
+  
+  };
+   
+  
+  // Function to create Engineer Card
+  const addEngineer = engineer => {
+    return `
+    <div class="card team-card engineer-card">
+    <div class="card-content" style="
+    border-radius: .25rem;
+    margin: 0.5em;
+    box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+    max-width: auto;
+    /* display: flex; */
+    background-color: lightblue;">
+    <div class="media">
+      <div class="media-left">
+          <img src="Images/placeimg_2.png" alt="Placeholder image">
+      </div>
+      <div class="media-content">
+        <p class="title is-4 engineer-name" style="margin-left:15px">${engineer.name}</p>
+        <p class="subtitle is-6 engineer-title">${engineer.role}</p>
+      </div>
+    </div>
+    <div class="content">
+      <p class='id'>ID: ${engineer.id}</p>
+      <p class='gitHub'>GitHub: ${engineer.gitHub}</p>
+      <p class='email'>Email: <a href="mailto:${engineer.email}">${engineer.email}</p>
+    </div>
+  </div>
+  </div> 
+  `
+  
+  };
+  
+  // Function to create Intern Card
+  const addIntern = intern => { 
+    return `
+    <div class="card team-card intern-card">
+      <div class="card-content" style="
+      border-radius: .25rem;
+      margin: 0.5em;
+      box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+      max-width: auto;
+      /* display: flex; */
+      background-color: lightblue;">
+      <div class="media">
+        <div class="media-left">
+            <img src="Images/placeimg_3.png" alt="Placeholder image">
+        </div>
+        <div class="media-content">
+          <p class="title is-4 intern-name" style="margin-left:15px">${intern.name}</p>
+          <p class="subtitle is-6 intern-title">${intern.role}</p>
+        </div>
+      </div>
+      <div class="content">
+        <p class='id'>ID: ${intern.id}</p>
+        <p class='school'>School: ${intern.school}</p>
+        <p class='email'>Email: <a href="mailto:${intern.email}">${intern.email}</p>
+      </div>
+    </div>
+  </div> 
+  `
+  
+  };
+  }
+
+
+
