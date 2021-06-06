@@ -86,6 +86,7 @@ const addIntern = async () => {
     addStaff();
 };
 
+
 // Function to create HTML page
 const writePage = userResponse => {
     fs.writeFile('./dist/index.html', userResponse, err => {
