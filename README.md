@@ -29,14 +29,12 @@ This application provides the user with quick and easy access to add a team memb
 
 ## Application Walk-through Video
 Walkthrough video demonstrating how to open the application in the command line and add individual team members, the resulting index.html file created and the full input added through the Team Profile Generator prompts <br>
- [Team Profile Generator Walkthrough Video](https://drive.google.com/file/d/1g3EdY965eK0A4Kjb9Jz4iH1g5SjZUAuC/view)<br>
- [HTML Team Profile Display Video](https://drive.google.com/file/d/14yHsc3IZFSZy02AL4WFqBdaa9Eci76NC/view)<br>
- [Team Profile Generator Command Line Prompts Video](https://drive.google.com/file/d/1q0gZy6t7D0TANMEo6LFd5ISUx4voYUW6/view)<br>
-<iframe src="https://drive.google.com/file/d/1g3EdY965eK0A4Kjb9Jz4iH1g5SjZUAuC/preview" width="640" height="480"></iframe>
-<br>
-<iframe src="https://drive.google.com/file/d/1g3EdY965eK0A4Kjb9Jz4iH1g5SjZUAuC/preview" width="640" height="480"></iframe>
-<br>
-<iframe src="https://drive.google.com/file/d/1q0gZy6t7D0TANMEo6LFd5ISUx4voYUW6/preview" width="640" height="480"></iframe>
+ * [Team Profile Generator Walkthrough Video](https://drive.google.com/file/d/1g3EdY965eK0A4Kjb9Jz4iH1g5SjZUAuC/view)
+ * [HTML Team Profile Display Video](https://drive.google.com/file/d/14yHsc3IZFSZy02AL4WFqBdaa9Eci76NC/view)
+ * [Team Profile Generator Command Line Prompts Video](https://drive.google.com/file/d/1q0gZy6t7D0TANMEo6LFd5ISUx4voYUW6/view)<br>
+[Team Profile Generator Walkthrough Gif](Team-Profile-Generator-Walkthrough-Video.gif)![](Team-Profile-Generator-Walkthrough-Video.gif)
+[HTML Team Profile Display Gif](HTML-Team-Profile-Display.gif)![](HTML-Team-Profile-Display.gif)
+[Team Profile Generator Command Line Prompts Gif](Team-Profile-Generator-Command-Line-Prompts.gif)![](Team-Profile-Generator-Command-Line-Prompts.gif)
 
 ## Contributors
 Georgia Hunt
