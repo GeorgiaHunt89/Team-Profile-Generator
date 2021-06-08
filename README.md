@@ -3,12 +3,12 @@
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
 
 * [Description](#description)
-* [Installation Instructions](#installation)
-* [Usage Information](#usage)
+* [Installation Instructions](#installation-instructions)
+* [Usage Information](#usage-information)
 * [Application Walk-through Video](#Application-Walk-through-Video)
 * [Contributors](#contributors)
-* [Test Instructions](#testing)
-* [Deployment Link](#deployment)
+* [Test Instructions](#test-instructions)
+* [Deployment Link](#deployment-link)
 * [Questions](#questions)
 * [License](#license)
 
@@ -32,9 +32,10 @@ Walkthrough video demonstrating how to open the application in the command line 
  * [Team Profile Generator Walkthrough Video](https://drive.google.com/file/d/1g3EdY965eK0A4Kjb9Jz4iH1g5SjZUAuC/view)
  * [HTML Team Profile Display Video](https://drive.google.com/file/d/14yHsc3IZFSZy02AL4WFqBdaa9Eci76NC/view)
  * [Team Profile Generator Command Line Prompts Video](https://drive.google.com/file/d/1q0gZy6t7D0TANMEo6LFd5ISUx4voYUW6/view)<br>
-[Team Profile Generator Walkthrough Gif](Team-Profile-Generator-Walkthrough-Video.gif)![](Team-Profile-Generator-Walkthrough-Video.gif)
-[HTML Team Profile Display Gif](HTML-Team-Profile-Display.gif)![](HTML-Team-Profile-Display.gif)
-[Team Profile Generator Command Line Prompts Gif](Team-Profile-Generator-Command-Line-Prompts.gif)![](Team-Profile-Generator-Command-Line-Prompts.gif)
+ <br>
+![Team Profile Generator Walkthrough Gif](https://github.com/GeorgiaHunt89/Team-Profile-Generator/blob/main/Images/README%20Gifs/Team%20Profile%20Generator%20Walkthrough%20Video.gif?raw=true)
+![HTML Team Profile Display Gif](https://github.com/GeorgiaHunt89/Team-Profile-Generator/blob/main/Images/README%20Gifs/HTML%20Team%20Profile%20Display%20.gif?raw=true)
+![Team Profile Generator Command Line Prompts Gif](https://github.com/GeorgiaHunt89/Team-Profile-Generator/blob/main/Images/README%20Gifs/Team%20Profile%20Generator%20Command%20Line%20Prompts.gif?raw=true)
 
 ## Contributors
 Georgia Hunt
