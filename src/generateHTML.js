@@ -1,6 +1,7 @@
 
 // Function to Generate HTML page
 module.exports = templateData => {
+  console.log(templateData);
   return `
   <!DOCTYPE html>
 <html lang="en">
@@ -9,6 +10,7 @@ module.exports = templateData => {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma-rtl.min.css">
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
   <link rel='stylesheet' href='./style.css'>
   <title>Team Profile Generator</title>
 </head>
@@ -28,15 +30,13 @@ module.exports = templateData => {
   </header>
   <div>
   <!-- Team Member cards -->
-  ${teamMemberCards}
+  ${teamMemberCards(templateData)}
   </div>
 </body>  
 </html>
   `
 };
 
-// Create Team Member cards
-const teamMemberCards = templateData => {
 
   // Function to create Employee Card
   const addEmployee = employee => {
@@ -51,11 +51,11 @@ const teamMemberCards = templateData => {
       background-color: lightblue;">
       <div class="media">
         <div class="media-left">
-            <img src="Images/placeimg_4.png" alt="Placeholder image">
+        <i class="far fa-user-circle fa-3x"></i>
         </div>
         <div class="media-content">
-          <p class="title is-4 employee-name" style="margin-left:15px">${employee.name}</p>
-          <p class="subtitle is-6 employee-title">${employee.role}</p>
+          <p class="title is-4 employee-name" style="margin-left:20px">${employee.name}</p>
+          <p class="subtitle is-6 employee-title" style="margin-left:20px">${employee.role}</p>
         </div>
       </div>
       <div class="content">
@@ -81,11 +81,11 @@ const teamMemberCards = templateData => {
         background-color: lightblue;">
     <div class="media">
       <div class="media-left">
-          <img src="Images/placeimg_1.png" alt="Placeholder image">
+      <i class="far fa-user-circle fa-3x"></i>
       </div>
       <div class="media-content">
-        <p class="title is-4 manager-name" style="margin-left:15px">${manager.name}</p>
-        <p class="subtitle is-6 manager-title">${manager.role}</p>
+        <p class="title is-4 manager-name" style="margin-left:20px">${manager.name}</p>
+        <p class="subtitle is-6 manager-title" style="margin-left:20px">${manager.role}</p>
       </div>
     </div>
     <div class="content">
@@ -113,11 +113,11 @@ const teamMemberCards = templateData => {
     background-color: lightblue;">
     <div class="media">
       <div class="media-left">
-          <img src="Images/placeimg_2.png" alt="Placeholder image">
+      <i class="far fa-user-circle fa-3x"></i>
       </div>
       <div class="media-content">
-        <p class="title is-4 engineer-name" style="margin-left:15px">${engineer.name}</p>
-        <p class="subtitle is-6 engineer-title">${engineer.role}</p>
+        <p class="title is-4 engineer-name" style="margin-left:20px">${engineer.name}</p>
+        <p class="subtitle is-6 engineer-title" style="margin-left:20px">${engineer.role}</p>
       </div>
     </div>
     <div class="content">
@@ -144,11 +144,11 @@ const teamMemberCards = templateData => {
       background-color: lightblue;">
       <div class="media">
         <div class="media-left">
-            <img src="Images/placeimg_3.png" alt="Placeholder image">
+        <i class="far fa-user-circle fa-3x"></i>
         </div>
         <div class="media-content">
-          <p class="title is-4 intern-name" style="margin-left:15px">${intern.name}</p>
-          <p class="subtitle is-6 intern-title">${intern.role}</p>
+          <p class="title is-4 intern-name" style="margin-left:20px">${intern.name}</p>
+          <p class="subtitle is-6 intern-title" style="margin-left:20px">${intern.role}</p>
         </div>
       </div>
       <div class="content">
@@ -161,7 +161,26 @@ const teamMemberCards = templateData => {
   `
   
   };
-  }
 
-
-
+// Create Team Member cards
+const teamMemberCards = (templateData) => {
+  let output = '';
+  templateData.forEach((member) => {
+    console.log('rendering member', member.role);
+    switch(member.role) {
+      case 'Manager': 
+        output += addManager(member);
+        return;
+      case 'Engineer':
+        output += addEngineer(member);
+          return;
+      case 'Intern':
+        output += addIntern(member);
+          return;
+      case 'Employee':
+        output += addEmployee(member);
+          break;
+    }
+  })
+  return output;
+}
